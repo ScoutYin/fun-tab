@@ -1,0 +1,54 @@
+{
+  "name": "fun-tab",
+  "private": true,
+  "version": "0.0.1",
+	"description": "A better mobile touch-swappable tabs component for Vue3",
+  "author": "ScoutYin <scoutyin.1900@gmail.com>",
+	"keywords": [
+    "Vue",
+		"Vue3",
+    "mobile",
+    "component",
+    "swap",
+		"tabs",
+		"tabBar",
+		"tab"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScoutYin/fun-tab.git"
+  },
+	"bugs": {
+    "url": "https://github.com/ScoutYin/fun-tab/issues"
+  },
+  "homepage": "https://github.com/ScoutYin/fun-tab",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.5",
+    "vue": "^3.2.33",
+    "vue-tsc": "^0.34.7"
+  },
+	"peerDependencies": {
+    "vue": "^3.2.20"
+  },
+	"engines": {
+    "node": ">= 12.0.0"
+  },
+	"license": "MIT"
+}
