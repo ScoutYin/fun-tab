@@ -18,4 +18,8 @@ module.exports = {
 		'plugin:vue/vue3-recommended',
 		'plugin:prettier/recommended',
 	],
+	rules: {
+		'prettier/prettier': ['warn'],
+		'vue/require-default-prop': 'off',
+	},
 };
