@@ -65,10 +65,10 @@ const tabBarItems: Ref<ItemConfig[]> = ref([
 	{ title: '我', icon: 'ly-icon ly-icon-wode', value: 'mine' },
 ] as ItemConfig[]);
 
-const handleTabsChange = (value) => {
+const handleTabsChange = (value: string) => {
 	console.log('FunTabs change:', value);
 };
-const handleTabBarChange = (value) => {
+const handleTabBarChange = (value: string) => {
 	console.log('FunTabBar change:', value);
 };
 </script>
