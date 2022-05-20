@@ -1,6 +1,6 @@
 import path from 'path';
 import type { ModuleFormat } from 'rollup';
-import { pkgDistDir } from './path';
+import { pkgDir } from './path';
 
 export const modules = ['es', 'cjs'] as const;
 
@@ -19,14 +19,14 @@ export const buildConfig: Record<Module, configInfo> = {
 		format: 'esm',
 		ext: 'js',
 		output: {
-			dir: path.resolve(pkgDistDir, 'es'),
+			dir: path.resolve(pkgDir, 'es'),
 		},
 	},
 	cjs: {
 		format: 'cjs',
 		ext: 'js',
 		output: {
-			dir: path.resolve(pkgDistDir, 'lib'),
+			dir: path.resolve(pkgDir, 'lib'),
 		},
 	},
 };

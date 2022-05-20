@@ -2,6 +2,7 @@ import { series, parallel } from 'gulp';
 import { copy } from 'fs-extra';
 import { buildModules } from './modules';
 import { generateTypesDefinitions } from './types-definitions';
+import { buildBundle } from './bundle';
 import { run } from './utils/process';
 import { buildConfig } from './config';
 import { typesDir } from './path';
@@ -18,6 +19,8 @@ const copyTypesDefinitions = async () => {
 
 export default series(
 	clean,
-	parallel(buildModules, generateTypesDefinitions),
-	copyTypesDefinitions
+	parallel(
+		buildBundle,
+		series(parallel(buildModules, generateTypesDefinitions), copyTypesDefinitions)
+	)
 );
