@@ -4,5 +4,5 @@ import vue from '@vitejs/plugin-vue';
 // https://vitejs.dev/config/
 export default defineConfig({
 	root: './examples',
-	plugins: [vue()]
+	plugins: [vue()],
 });

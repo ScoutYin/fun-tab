@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"lib": ["ESNext", "DOM"],
+		"declaration": true,
+		"incremental": true, // 生成tsbuildinfo文件，下次编译前编译器会检查该文件，决定哪些文件真正需要编译
+		"composite": true
+	}
+}

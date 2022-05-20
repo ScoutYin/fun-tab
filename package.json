@@ -2,28 +2,41 @@
   "name": "fun-tab",
   "private": true,
   "version": "0.0.1",
-	"description": "A better mobile touch-swappable tabs component for Vue3",
+  "description": "A better mobile touch-swappable tabs component for Vue3",
   "author": "ScoutYin <scoutyin.1900@gmail.com>",
-	"keywords": [
+  "keywords": [
     "Vue",
-		"Vue3",
+    "Vue3",
     "mobile",
     "component",
     "swap",
-		"tabs",
-		"tabBar",
-		"tab"
+    "tabs",
+    "tabBar",
+    "tab"
   ],
+  "files": [
+    "es",
+    "lib"
+  ],
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./*": "./*"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "typeCheck": "vue-tsc --noEmit",
+    "build": "gulp -f build/gulpfile.ts",
     "preview": "vite preview"
   },
-	"repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/ScoutYin/fun-tab.git"
   },
-	"bugs": {
+  "bugs": {
     "url": "https://github.com/ScoutYin/fun-tab/issues"
   },
   "homepage": "https://github.com/ScoutYin/fun-tab",
@@ -31,29 +44,43 @@
     "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/gulp": "^4.0.9",
+    "@types/rollup-plugin-css-only": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "@vitejs/plugin-vue": "^2.3.1",
+    "element-plus": "^2.2.0",
+    "esbuild": "^0.14.39",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.7.1",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.1.0",
+    "gulp": "^4.0.2",
     "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.74.1",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-esbuild": "^4.9.1",
+    "sucrase": "^3.21.0",
+    "ts-morph": "^14.0.0",
     "typescript": "^4.5.4",
     "vite": "^2.9.5",
     "vue": "^3.2.33",
     "vue-tsc": "^0.34.7"
   },
-	"peerDependencies": {
+  "peerDependencies": {
     "vue": "^3.2.20"
   },
-	"engines": {
+  "engines": {
     "node": ">= 12.0.0"
   },
-	"browserslist": [
+  "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie < 10"
   ],
-	"license": "MIT"
+  "license": "MIT"
 }
