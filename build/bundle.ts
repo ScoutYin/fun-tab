@@ -4,6 +4,7 @@ import { srcDir, pkgDistDir } from './path';
 import vue from '@vitejs/plugin-vue';
 import esbuild from 'rollup-plugin-esbuild';
 import css from 'rollup-plugin-css-only';
+import filesize from 'rollup-plugin-filesize';
 import { writeBundles, formatBundleFilename } from './utils/rollup';
 import { Plugin } from 'rollup';
 
@@ -23,6 +24,7 @@ const build = async (minify: boolean) => {
 					'.vue': 'ts',
 				},
 			}),
+			filesize() as Plugin,
 		],
 		external: ['vue'],
 	});

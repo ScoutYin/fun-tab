@@ -3,6 +3,7 @@ import { rollup } from 'rollup';
 import vue from '@vitejs/plugin-vue';
 import esbuild from 'rollup-plugin-esbuild';
 import css from 'rollup-plugin-css-only';
+import filesize from 'rollup-plugin-filesize';
 import { buildConfig } from './config';
 import { srcDir } from './path';
 import type { Plugin } from 'rollup';
@@ -32,6 +33,7 @@ export const buildModules = async () => {
 					'.vue': 'ts',
 				},
 			}),
+			filesize() as Plugin,
 		],
 		external: ['vue'],
 	});
