@@ -1,6 +1,5 @@
 {
   "name": "fun-tab",
-  "private": true,
   "version": "0.0.1",
   "description": "A mobile touch-swappable tabs component for Vue3",
   "author": "ScoutYin <scoutyin.1900@gmail.com>",
