@@ -6,7 +6,7 @@ import esbuild from 'rollup-plugin-esbuild';
 import css from 'rollup-plugin-css-only';
 import filesize from 'rollup-plugin-filesize';
 import { writeBundles, formatBundleFilename } from './utils/rollup';
-import { Plugin } from 'rollup';
+import type { Plugin } from 'rollup';
 
 const build = async (minify: boolean) => {
 	const bundle = await rollup({
@@ -33,13 +33,19 @@ const build = async (minify: boolean) => {
 		{
 			format: 'esm',
 			sourcemap: minify,
-			file: path.resolve(pkgDistDir, formatBundleFilename('index.full', minify)),
+			file: path.resolve(
+				pkgDistDir,
+				formatBundleFilename('index.full', minify)
+			),
 		},
 		{
 			format: 'cjs',
 			sourcemap: minify,
 			exports: 'named', // 以命名导出方式导出
-			file: path.resolve(pkgDistDir, formatBundleFilename('index.full', minify, '.cjs')),
+			file: path.resolve(
+				pkgDistDir,
+				formatBundleFilename('index.full', minify, '.cjs')
+			),
 		},
 	]);
 };

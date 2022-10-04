@@ -18,7 +18,9 @@ export const run = (command: string, cwd: string = projectRoot) => {
 			if (code === 0) {
 				resolve();
 			} else {
-				reject(new Error(`Command failed. \n Command: ${command} \n Code: ${code}`));
+				reject(
+					new Error(`Command failed. \n Command: ${command} \n Code: ${code}`)
+				);
 			}
 		});
 

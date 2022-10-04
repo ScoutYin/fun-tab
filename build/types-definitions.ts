@@ -22,7 +22,7 @@ export const generateTypesDefinitions = async () => {
 	});
 
 	const tasks = files.map(async (file) => {
-		const fileContent = await readFile(path.resolve(srcDir, file), { encoding: 'utf-8' });
+		const fileContent = await readFile(path.resolve(srcDir, file), 'utf-8');
 		// 处理 .vue 文件中的 <script lang="ts"> 和 <script setup lang="ts"> 内容，生成 .ts 源文件，给ts-morph处理
 		if (file.endsWith('.vue')) {
 			const sfc = vueCompiler.parse(fileContent);
@@ -45,7 +45,10 @@ export const generateTypesDefinitions = async () => {
 			}
 
 			if (isTs) {
-				project.createSourceFile(path.resolve(projectRoot, file) + '.ts', content);
+				project.createSourceFile(
+					path.resolve(projectRoot, file) + '.ts',
+					content
+				);
 			}
 		} else {
 			project.createSourceFile(path.resolve(projectRoot, file), fileContent);

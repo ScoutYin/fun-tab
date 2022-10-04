@@ -8,6 +8,10 @@ export const writeBundles = (bundle: RollupBuild, modules: OutputOptions[]) => {
 	);
 };
 
-export const formatBundleFilename = (name: string, minify: boolean, extname = '.js') => {
+export const formatBundleFilename = (
+	name: string,
+	minify: boolean,
+	extname = '.js'
+) => {
 	return `${name}${minify ? '.min' : ''}${extname}`;
 };
